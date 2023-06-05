@@ -31,12 +31,6 @@ public class Shed extends Building {
             this.junkCapacity = JunkCapacity.EMPTY;
         }
     }
-
-    @Override
-    public void setResidents(int residentsAmount) {
-        super.setResidents(residentsAmount);
-        updateSafetyRating();
-    }
     
     // The safety rating gets assigned with a enum
     // according to your amount of residents.
@@ -52,6 +46,12 @@ public class Shed extends Building {
     // This calls the static method "speak" in Building class
     public void speak() {
         speak("Shed");
+    }
+
+    @Override
+    public void setResidents(int residentsAmount) {
+        super.setResidents(residentsAmount);
+        updateSafetyRating();
     }
     
 }

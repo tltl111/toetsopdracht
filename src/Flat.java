@@ -4,12 +4,6 @@ public class Flat extends Building {
         super(floors, doors, residents);
         updateSafetyRating();
     }
-
-    @Override
-    public void setResidents(int residentsAmount) {
-        super.setResidents(residentsAmount);
-        updateSafetyRating();
-    }
     
     // The safety rating gets assigned with an enum
     // according to your amount of residents.
@@ -27,6 +21,13 @@ public class Flat extends Building {
     // This calls the static method "speak" in Building class
     public void speak() {
         speak("Flat");
+    }
+
+    
+    @Override
+    public void setResidents(int residentsAmount) {
+        super.setResidents(residentsAmount);
+        updateSafetyRating();
     }
     
 }
